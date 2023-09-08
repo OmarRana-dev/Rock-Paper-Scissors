@@ -36,6 +36,7 @@ function game() {
     // this if else function check that user put right input or not.
 
     if (playerSelection === "rock" || playerSelection === "scissor" || playerSelection === "paper") {
+      
       let computerSelection = getComputerChoice();
 
       // here we recall to funtion that check who's win computer or player and give's result

@@ -1,69 +1,68 @@
-let choice = ["rock", "scissor", "paper"];
+const bodyContent = document.querySelector('#body');
+const mainContent = document.querySelector("#finalResultContainer")
+
+const userContainer = document.querySelector("#user-container");
+const computerContainer = document.querySelector("#auto-container");
+const resultContainer = document.querySelector("#result-container");
+const btnRock = document.querySelector("#btn-rock");
+const btnScissor = document.querySelector("#btn-scissor");
+const btnPaper = document.querySelector("#btn-paper");
+
+
+btnRock.addEventListener("click", function (e) {
+  userContainer.textContent = e.target.textContent;
+  game();
+});
+
+btnScissor.addEventListener("click", function (e) {
+  userContainer.textContent = e.target.textContent;
+  game();
+});
+
+btnPaper.addEventListener("click", function (e) {
+  userContainer.textContent = e.target.textContent;
+  game();
+});
 
 // this function choose randum choices.
+let choice = ["Rock", "Scissor", "Paper"];
 function getComputerChoice() {
   return choice[Math.floor(Math.random() * 3)];
 }
 
 // this function called in game() function to check the player-input and computer choice who will win ro loss.
+
+let n = 0;
+
 function playRound(playerSelection, computerSelection) {
   if (playerSelection === computerSelection) {
-    return `Drow! ${playerSelection} = ${computerSelection}`;
+    return `Drow!`;
   } else if (
-    (playerSelection === "paper" &&
-      computerSelection === "rock") ||
-    (playerSelection === "rock" &&
-      computerSelection === "scissor") ||
-    (playerSelection === "scissor" &&
-      computerSelection === "paper")
+    (playerSelection === "paper" && computerSelection === "rock") ||
+    (playerSelection === "rock" && computerSelection === "scissor") ||
+    (playerSelection === "scissor" && computerSelection === "paper")
   ) {
-    return `You Win! ${playerSelection} beats ${computerSelection}`;
+    n++;
+    return `You Win!`;
   } else {
-    return `You Lose! ${computerSelection} beats ${playerSelection}`;
+    n++;
+    return `You Lose!`;
   }
 }
 
 function game() {
-  let n = 0;
-  let lose = 0;
-  let win = 0;
-  let drow = 0;
-  while (n < 5) {
-    // 
-    let input = prompt(`"Rock", "Paper", "Scissor"`, "Rock");
-    let playerSelection = input.toLowerCase();
+  let playerSelection = userContainer.textContent.toLowerCase();
+  let computerSelection = getComputerChoice();
+  computerContainer.textContent = computerSelection;
 
-    // this if else function check that user put right input or not.
-
-    if (playerSelection === "rock" || playerSelection === "scissor" || playerSelection === "paper") {
-      
-      let computerSelection = getComputerChoice();
-
-      // here we recall to funtion that check who's win computer or player and give's result
-      let result = playRound(playerSelection, computerSelection);
-      console.log(result + "\n ")
-      if (result.includes("Win")) {
-        win++;
-        n++;
-      } else if (result.includes("Lose")) {
-        lose++;
-        n++;
-      } else {
-        drow++;
-      }
-    }else {
-      console.log("Please Put Right one.")
-    }
-
-  }
-  console.log(`You Win ${win} Games.`);
-  console.log(`You Lose ${lose} Games.`);
-  console.log(`Total Round of Game: ${n}`);
-  console.log(`Drow's in Game: ${drow}`);
-  if (win > lose) {
-    console.log("\n YOU WON THE GAME!\n ");
-  } else {
-    console.log("\n YOU LOSE! TryAgain.\n ");
+  // here we call to funtion that will check who's win's the game computer or player and give's result
+  let result = playRound(playerSelection, computerSelection.toLowerCase());
+  resultContainer.textContent = result;
+  if (n === 5){
+    console.log("You Play 5 ROUND'S.")
+    n = 0;
   }
 }
-game();
+
+// Author: Omar Rana
+// Date Created: 07/09/2023

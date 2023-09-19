@@ -1,6 +1,3 @@
-const bodyContent = document.querySelector('#body');
-const mainContent = document.querySelector("#finalResultContainer")
-
 const userContainer = document.querySelector("#user-container");
 const computerContainer = document.querySelector("#auto-container");
 const resultContainer = document.querySelector("#result-container");

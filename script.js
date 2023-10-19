@@ -76,15 +76,17 @@ function game() {
     if (win > lose) {
       finelResult.textContent =
         "You Won the fucking Game! Your Father pround on you.";
-      matchDetails.textContent = `You Win ${win} rounds out of ${n} round & lose  ${lose}`
+      matchDetails.textContent = `You Win ${win} rounds out of ${n} & lose ${lose} rounds`;
       resultContainer.innerHTML = wImjs;
       restart();
     } else if (lose > win) {
       finelResult.textContent = "Fuck You! You'r loser BigAssHole.";
       resultContainer.innerHTML = lImjs;
+      matchDetails.textContent = `You Win ${win} rounds out of ${n} & lose ${lose} rounds`;
       restart();
     } else {
       finelResult.textContent = "Game is Drow! Try Again and win AssHole.";
+      matchDetails.textContent = `You Win ${win} rounds out of ${n} & lose ${lose} rounds`;
       resultContainer.innerHTML = tImjs;
       restart();
     }

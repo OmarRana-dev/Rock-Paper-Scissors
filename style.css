@@ -6,13 +6,16 @@ body, html {
 
 button {
     background-color: cadetblue;
-    width: 90px;
     margin: 30px 10px 0px 10px;
-    padding: 10px 0px 10px 0px;
-    /* border: none; */
+    padding: 10px 25px;
     border-radius: 4px;
     color: white;
     font-weight: bold;
+    font-size: large;
+}
+
+.btn-container {
+    margin-bottom: 50px;
 }
 
 .main-container {
@@ -36,7 +39,7 @@ button {
     min-width: 100px;
     display: flex;
     justify-content: center;
-
+    font-size: 22px;
 }
 
 #result-container {
@@ -52,8 +55,8 @@ button {
 }
 
 
-.output-container, .btn-container{
-    margin-top: 90px;
+.btn-container{
+    margin-top: 60px;
 }
 
 .output-container {
@@ -61,3 +64,36 @@ button {
     justify-content: space-between;
     width: 40%;
 } 
+
+#round-container {
+    /* background-color: blanchedalmond; */
+    width: 300px;
+    height: 100px;
+    display: flex;
+    justify-content: space-between;
+    text-align: center;
+}
+
+#totalRounds {
+    width: 200px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    /* background-color: aquamarine; */
+    height: 80px;
+}
+
+#totalRounds h3, h2 {
+    /* background-color: blanchedalmond; */
+}
+
+
+.fa-solid {
+    font-size: xx-large;
+    /* background-color: aquamarine; */
+}
+
+.r-content {
+    /* background-color: blueviolet; */
+    margin: 10px 0px;
+}

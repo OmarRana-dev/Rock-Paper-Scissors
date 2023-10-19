@@ -3,6 +3,13 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+      integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
     <link rel="stylesheet" href="style.css" />
     <title>Rock Scissor Paper</title>
     <script src="script.js" defer></script>
@@ -10,9 +17,29 @@
   <body id="body">
     <h1>IN PROCESS...</h1>
 
-    <div class="main-container" id="finalResultContainer">
+    <div class="main-container">
       <h1>ROCK / SCISSOR / PAPER</h1>
       <div id="result-container">RESULT</div>
+      <div id="round-container">
+        <div id="hum-ro-container">
+          <i class="fa-solid fa-user"></i>
+          <div>
+            <!-- <p>Score:</p> -->
+            <h1 id="win-rounds" class="r-content">0</h1>
+          </div>
+        </div>
+        <div id="com-ro-container">
+          <i class="fa-solid fa-laptop"></i>
+          <div>
+            <!-- <p>Score:</p> -->
+            <h1 id="lose-rounds" class="r-content">0</h1>
+          </div>
+        </div>
+      </div>
+      <div id="totalRounds">
+        <h3>ROUNDS:</h3>
+        <h2 id="roundCounter">0</h2>
+      </div>
       <div class="output-container">
         <div id="user-container">Player 1</div>
         <div>v/s</div>
@@ -23,7 +50,8 @@
         <button id="btn-scissor">Scissor</button>
         <button id="btn-paper">Paper</button>
       </div>
+      <h1><i id="finel-result"></i></h1>
+      <p id="detailed-result"></p>
     </div>
-
   </body>
 </html>
